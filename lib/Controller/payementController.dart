@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 class PaymentController extends GetxController {
-  RxString? upiAddrError = null;
+  var upiAddrError = "".obs;
   final upiAddressController = TextEditingController();
   final amountController = TextEditingController();
   RxBool isUpiEditable = false.obs;

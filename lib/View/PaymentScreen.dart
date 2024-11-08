@@ -16,7 +16,7 @@ class Screen extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             _vpa(controller),
-            Obx(() => controller.upiAddrError?.value != null ? _vpaError(controller) : Container()),
+            Obx(() => controller.upiAddrError?.value != "" ? _vpaError(controller) : Container()),
             _amount(controller),
             if (Platform.isIOS) _submitButton(controller),
             Platform.isAndroid ? _androidApps(controller) : _iosApps(controller),
