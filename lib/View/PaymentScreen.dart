@@ -76,19 +76,10 @@ class Screen extends StatelessWidget {
           Expanded(
             child: TextField(
               controller: controller.amountController,
-              readOnly: true,
-              enabled: false,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: 'Amount',
               ),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 8),
-            child: IconButton(
-              icon: Icon(Icons.loop),
-              onPressed: controller.generateAmount,
             ),
           ),
         ],

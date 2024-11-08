@@ -15,7 +15,6 @@ class PaymentController extends GetxController {
   void onInit() {
     super.onInit();
     upiAddressController.text = "ADD_UPI_ID_HERE";
-    amountController.text = _generateRandomAmount();
 
     Future.delayed(Duration.zero, () async {
       apps?.addAll(await UpiPay.getInstalledUpiApplications(
@@ -30,12 +29,6 @@ class PaymentController extends GetxController {
     super.dispose();
   }
 
-  String _generateRandomAmount() =>
-      (Random.secure().nextDouble() * 10).toStringAsFixed(2);
-
-  void generateAmount() {
-    amountController.text = _generateRandomAmount();
-  }
 
   Future<void> onTap(ApplicationMeta app) async {
     final err = _validateUpiAddress(upiAddressController.text);
